@@ -103,9 +103,11 @@ CREATE TABLE Reservation (
   FOREIGN KEY (client) REFERENCES Client(id)
 );
 
+
 ---
 
 ## 🧪 Tests et validation
+
 
 Avant la livraison finale, plusieurs tests ont été effectués :
 
