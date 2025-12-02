@@ -176,18 +176,6 @@ Séparation claire :
 
 ---
 
-## 📄 Licence
-Projet académique – utilisation libre dans un cadre pédagogique.  
-Non destiné à un usage commercial sans autorisation.
-
----
-
-## 🙌 Remerciements
-Merci aux enseignants et encadrants pour l’accompagnement durant ce projet.  
-Merci également aux librairies open-source utilisées : JCalendar, JFreeChart, MySQL Connector.
-
----
-
 ### ✨ Fin du README  
 Si vous souhaitez contribuer, améliorer ou adapter ce projet, n’hésitez pas à soumettre une pull request !
 
