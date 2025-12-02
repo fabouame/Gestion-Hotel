@@ -102,7 +102,7 @@ CREATE TABLE Reservation (
   FOREIGN KEY (chambre) REFERENCES Chambre(numero),
   FOREIGN KEY (client) REFERENCES Client(id)
 );
-
+```
 
 ---
 
