@@ -1,0 +1,32 @@
+ACCORD DE LICENCE
+
+Gestion des Réservations
+Version 1.0
+
+Copyright (c) 2025 VotreNom. Tous droits réservés.
+
+CONDITIONS D'UTILISATION :
+
+1. OCTROI DE LICENCE
+Ce logiciel est fourni en tant que graticiel pour un usage personnel et commercial.
+Vous pouvez utiliser ce logiciel sans frais.
+
+2. DISTRIBUTION
+Vous pouvez distribuer ce logiciel à condition que :
+- Aucune modification ne soit apportée aux fichiers originaux
+- Aucun frais ne soit facturé pour la distribution
+- Tous les fichiers originaux et la documentation soient inclus
+
+3. AVERTISSEMENT
+Ce logiciel est fourni "tel quel" sans aucune garantie d'aucune sorte,
+expresse ou implicite. L'utilisateur assume tous les risques concernant
+la qualité et les performances du programme.
+
+4. LIMITATION DE RESPONSABILITÉ
+En aucun cas l'auteur ne pourra être tenu responsable des dommages
+résultant de l'utilisation ou de l'impossibilité d'utiliser ce logiciel.
+
+En installant ce logiciel, vous acceptez les conditions ci-dessus.
+
+---
+Gestion des Réservations - Système de gestion de réservations hôtelières
