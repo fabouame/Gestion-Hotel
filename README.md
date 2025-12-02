@@ -103,4 +103,90 @@ CREATE TABLE Reservation (
   FOREIGN KEY (client) REFERENCES Client(id)
 );
 
+---
+
+## 🧪 Tests et validation
+
+Avant la livraison finale, plusieurs tests ont été effectués :
+
+### ✔ Tests unitaires (DAO)
+- Tests CRUD sur **Chambre**
+- Tests CRUD sur **Client**
+- Tests CRUD sur **Reservation**
+- Vérification des contraintes (clés étrangères, unicité…)
+
+### ✔ Tests fonctionnels (UI)
+- Navigation entre fenêtres
+- Validation des formulaires
+- Prévention des chevauchements de réservations
+- Filtrage dynamique des tableaux
+- Rafraîchissement automatique après ajout/modification/suppression
+
+### ✔ Tests de performance
+- Temps de connexion à la base
+- Génération rapide des tableaux (JTable)
+- Génération des graphiques JFreeChart
+
+### ✔ Tests d’installation Windows (Inno Setup)
+- Installation sur PC sans Java  
+- Lancement via `.exe`  
+- Vérification de la JRE embarquée  
+- Suppression propre (désinstalleur Inno Setup)
+
+---
+
+## 💡 Choix techniques & justification
+
+### 🔹 MVC léger
+Séparation claire :
+- **Model** → Entities + DAO  
+- **Controller** → Services  
+- **View** → Swing (ui/)  
+
+➡️ Facilite la maintenance et les évolutions.
+
+### 🔹 MySQL + JDBC  
+- Stable  
+- Facile à intégrer  
+- Large compatibilité avec Java  
+
+### 🔹 Swing
+- Interface simple mais robuste  
+- Compatible avec tous les OS  
+- Idéal pour applications pédagogiques
+
+### 🔹 JFreeChart
+- Librairie mature  
+- Graphiques professionnels  
+- Intégration facile avec Swing
+
+---
+
+## 🔮 Améliorations possibles (travaux futurs)
+
+- Ajouter un système d’authentification avancé (rôles : admin, employé)
+- Ajouter une gestion des paiements
+- Export des rapports en PDF / Excel
+- Moderniser l'interface (JavaFX ou FlatLaf)
+- Ajouter un tableau de bord (dashboard)
+- Système de notifications pour les réservations proches
+- Migration vers **Hibernate** pour remplacer JDBC
+
+---
+
+## 📄 Licence
+Projet académique – utilisation libre dans un cadre pédagogique.  
+Non destiné à un usage commercial sans autorisation.
+
+---
+
+## 🙌 Remerciements
+Merci aux enseignants et encadrants pour l’accompagnement durant ce projet.  
+Merci également aux librairies open-source utilisées : JCalendar, JFreeChart, MySQL Connector.
+
+---
+
+### ✨ Fin du README  
+Si vous souhaitez contribuer, améliorer ou adapter ce projet, n’hésitez pas à soumettre une pull request !
+
 
