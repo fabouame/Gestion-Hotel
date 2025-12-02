@@ -180,7 +180,6 @@ Séparation claire :
 https://github.com/user-attachments/assets/9965fe9a-b100-4a2b-8047-99e63303836c
 
 ---
-### ✨ Fin du README  
-Si vous souhaitez contribuer, améliorer ou adapter ce projet, n’hésitez pas à soumettre une pull request !
-
+### Auteur  
+Nom : Abouame fatemaezzahra
 
