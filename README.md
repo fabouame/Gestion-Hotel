@@ -176,14 +176,13 @@ Séparation claire :
 
 ---
 
-##Architecture du Projet
+## 🏗️ Architecture du Projet
 
 <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/8c312f88-579c-49c7-b320-85f503db5acf" />
 ---
 
 
-##🎥 Démonstration Vidéo
-
+## 🎥 Démonstration Vidéo
 
 
 https://github.com/user-attachments/assets/33d4e9a2-ae2c-4cbc-9026-c12bc71962f3
