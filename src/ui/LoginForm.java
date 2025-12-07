@@ -40,6 +40,12 @@ public class LoginForm extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoginActionPerformed(evt);
+            }
+        });
+
         bnLogin.setText("Login");
         bnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,45 +163,50 @@ public class LoginForm extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_bnLoginActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
-        String login = txtLogin.getText().trim();
-        UserService us = new UserService();
 
-        // 1. Check if user exists
-        User u = us.findByLogin(login);
-        if (u == null) {
-            JOptionPane.showMessageDialog(this, "User not found!");
-            return;
-        }
+    String login = txtLogin.getText().trim();
+    UserService us = new UserService();
+    User user = us.findByLogin(login);
 
-        // 2. Ask the security question
-        String answer = JOptionPane.showInputDialog(this, u.getQuestion());
-        if (answer == null || answer.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Answer cannot be empty!");
-            return;
-        }
+    if (user == null) {
+        JOptionPane.showMessageDialog(this, "Utilisateur introuvable !");
+        return;
+    }
 
-        // 3. Verify answer
-        if (!us.verifySecurityAnswer(login, answer)) {
-            JOptionPane.showMessageDialog(this, "Incorrect answer!");
-            return;
-        }
+    String email = JOptionPane.showInputDialog(this, "Entrez votre email :");
+    if (email == null || email.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Email invalide !");
+        return;
+    }
 
-        // 4. Ask for new password
-        String newPw = JOptionPane.showInputDialog(this, "New password:");
-        if (newPw == null || newPw.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Password cannot be empty!");
-            return;
-        }
+    // Afficher la question secrète
+    String answer = JOptionPane.showInputDialog(this, user.getQuestion());
 
-        // 5. Change password
-        if (us.changePassword(login, newPw)) {
-            JOptionPane.showMessageDialog(this, "Password successfully changed!");
-        } else {
-            JOptionPane.showMessageDialog(this, "Error changing password.");
-        }
+    if (!us.verifySecurityAnswer(login, answer)) {
+        JOptionPane.showMessageDialog(this, "Réponse incorrecte !");
+        return;
+    }
 
+    String newPw = JOptionPane.showInputDialog(this, "Entrez un nouveau mot de passe :");
+    if (newPw == null || newPw.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Mot de passe invalide !");
+        return;
+    }
+
+    boolean done = us.resetPasswordAndSendEmail(login, email, newPw);
+
+    if (done) {
+        JOptionPane.showMessageDialog(this, "Mot de passe changé et email envoyé !");
+    } else {
+        JOptionPane.showMessageDialog(this, "Erreur lors de l’envoi de l'email.");
+    }
+
+        
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLoginActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

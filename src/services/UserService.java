@@ -179,5 +179,13 @@ public boolean authenticate(String login, String password) {
     }
     return false;
 }
+public boolean resetPasswordAndSendEmail(String login, String email, String newPassword) {
+    boolean updated = changePassword(login, newPassword);
+
+    if (updated) {
+        return EmailSender.sendNewPassword(email, newPassword);
+    }
+    return false;
+}
 
 }

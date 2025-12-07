@@ -4,36 +4,23 @@ AppVersion=1.0
 DefaultDirName={pf}\GestionHotel
 DefaultGroupName=GestionHotel
 OutputDir=output
-OutputBaseFilename=Setup_GestionHotel
+OutputBaseFilename=GestionHotel_Setup
 Compression=lzma2
 SolidCompression=yes
-DisableStartupPrompt=yes
-WizardStyle=modern
 
 [Files]
-; Jar principal
 Source: "dist\GestionHotel.jar"; DestDir: "{app}"; Flags: ignoreversion
-
-; Librairies
-Source: "dist\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs createallsubdirs
-
-; JRE portable — celle que tu as dans ton projet
+Source: "dist\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs
 Source: "jre\*"; DestDir: "{app}\jre"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
-; Menu démarrer
-Name: "{group}\GestionHotel"; \
-Filename: "{app}\jre\bin\javaw.exe"; \
-Parameters: "-jar ""{app}\GestionHotel.jar"""
+Name: "{group}\GestionHotel"; Filename: "{app}\jre\bin\javaw.exe"; \
+Parameters: "-cp ""{app}\GestionHotel.jar;{app}\lib\*"" ui.LoginWindow"
 
-; Bureau (optionnel)
-Name: "{autodesktop}\GestionHotel"; \
-Filename: "{app}\jre\bin\javaw.exe"; \
-Parameters: "-jar ""{app}\GestionHotel.jar"""; \
-Tasks: desktopicon
+Name: "{autodesktop}\GestionHotel"; Filename: "{app}\jre\bin\javaw.exe"; \
+Parameters: "-cp ""{app}\GestionHotel.jar;{app}\lib\*"" ui.LoginWindow"
 
 [Run]
-; Exécuter automatiquement à la fin
 Filename: "{app}\jre\bin\javaw.exe"; \
-Parameters: "-jar ""{app}\GestionHotel.jar"""; \
+Parameters: "-cp ""{app}\GestionHotel.jar;{app}\lib\*"" ui.LoginWindow"; \
 Flags: nowait postinstall skipifsilent
